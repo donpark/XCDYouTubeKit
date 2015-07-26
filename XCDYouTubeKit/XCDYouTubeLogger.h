@@ -27,6 +27,12 @@ extern Class XCDYouTubeLogClass(void);
 #define XCDYouTubeLogError(format, ...)   XCDYouTubeLog(DDLogFlagError,   format, ##__VA_ARGS__)
 #define XCDYouTubeLogWarning(format, ...) XCDYouTubeLog(DDLogFlagWarning, format, ##__VA_ARGS__)
 #define XCDYouTubeLogInfo(format, ...)    XCDYouTubeLog(DDLogFlagInfo,    format, ##__VA_ARGS__)
+#ifdef XCDYOUTUBEKIT_LOGGING_FIXED
 #define XCDYouTubeLogDebug(format, ...)   XCDYouTubeLog(DDLogFlagDebug,   format, ##__VA_ARGS__)
 #define XCDYouTubeLogVerbose(format, ...) XCDYouTubeLog(DDLogFlagVerbose, format, ##__VA_ARGS__)
 #define XCDYouTubeLogTrace(format, ...)   XCDYouTubeLog(DDLogFlagTrace,   format, ##__VA_ARGS__)
+#else
+#define XCDYouTubeLogDebug(format, ...)
+#define XCDYouTubeLogVerbose(format, ...)
+#define XCDYouTubeLogTrace(format, ...)
+#endif
